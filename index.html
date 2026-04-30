@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité – Oralo app</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #161b27;
+      --surface2: #1c2333;
+      --border: rgba(255,255,255,0.07);
+      --text: #e2e8f0;
+      --muted: rgba(226,232,240,0.50);
+      --faint: rgba(226,232,240,0.25);
+      --accent: #60a5fa;
+      --accent-glow: rgba(96,165,250,0.12);
+      --green: #34d399;
+      --green-bg: rgba(52,211,153,0.08);
+      --green-border: rgba(52,211,153,0.20);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrapper { max-width: 780px; margin: 0 auto; padding: 56px 24px 80px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--green-bg); border: 1px solid var(--green-border);
+      border-radius: 99px; padding: 5px 14px;
+      font-size: 12px; font-weight: 700; color: var(--green);
+      letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900;
+      color: var(--text); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 12px;
+    }
+    .app-name { color: var(--accent); }
+    .meta { font-size: 13px; color: var(--faint); font-weight: 500; }
+    .toc {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 20px 24px; margin: 32px 0 40px;
+    }
+    .toc-title {
+      font-size: 11px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--faint); margin-bottom: 12px;
+    }
+    .toc ol {
+      padding-left: 18px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px;
+    }
+    @media (max-width: 560px) { .toc ol { grid-template-columns: 1fr; } }
+    .toc li { font-size: 13px; }
+    .toc a { color: var(--muted); text-decoration: none; font-weight: 600; transition: color 0.15s; }
+    .toc a:hover { color: var(--accent); }
+    .section { margin-bottom: 40px; scroll-margin-top: 24px; }
+    h2 {
+      font-size: 1.15rem; font-weight: 900; color: var(--text);
+      margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 26px; height: 26px;
+      background: var(--accent-glow); border: 1px solid rgba(96,165,250,0.25);
+      border-radius: 8px; font-size: 11px; font-weight: 900; color: var(--accent); flex-shrink: 0;
+    }
+    h3 {
+      font-size: 0.92rem; font-weight: 800; color: rgba(226,232,240,0.75);
+      margin: 20px 0 8px; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    p { color: var(--muted); font-size: 14.5px; margin-bottom: 12px; }
+    ul, ol { padding-left: 20px; margin-bottom: 12px; }
+    li { color: var(--muted); font-size: 14.5px; margin-bottom: 5px; }
+    li strong, p strong { color: rgba(226,232,240,0.85); }
+    .info-box {
+      display: flex; gap: 10px; align-items: flex-start;
+      background: var(--accent-glow); border: 1px solid rgba(96,165,250,0.20);
+      border-radius: 12px; padding: 14px 16px; margin-bottom: 24px;
+    }
+    .info-box p { margin: 0; color: rgba(96,165,250,0.80); font-size: 13px; }
+    .legal-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;
+    }
+    .legal-box p { margin: 0; font-size: 13.5px; }
+    .base-tag {
+      display: inline-block; background: rgba(52,211,153,0.10);
+      border: 1px solid rgba(52,211,153,0.22); border-radius: 6px;
+      padding: 3px 10px; font-size: 11.5px; font-weight: 800;
+      color: var(--green); margin-top: 8px;
+    }
+    .rights-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px;
+    }
+    @media (max-width: 560px) { .rights-grid { grid-template-columns: 1fr; } }
+    .right-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 14px 16px;
+    }
+    .right-card .right-title { font-size: 12px; font-weight: 900; color: var(--accent); margin-bottom: 4px; }
+    .right-card p { margin: 0; font-size: 13px; }
+    .right-card a { color: var(--accent); }
+    .contact-card {
+      background: linear-gradient(135deg, rgba(96,165,250,0.08), rgba(96,165,250,0.03));
+      border: 1px solid rgba(96,165,250,0.20); border-radius: 18px;
+      padding: 28px; margin-top: 48px; text-align: center;
+    }
+    .contact-card h2 { border: none; justify-content: center; padding-bottom: 0; margin-bottom: 8px; font-size: 1.1rem; }
+    .contact-card p { margin-bottom: 16px; font-size: 14px; }
+    .contact-card a.btn {
+      display: inline-block; background: var(--accent); color: #0f1117;
+      font-weight: 800; font-size: 14px; text-decoration: none;
+      padding: 10px 24px; border-radius: 99px; transition: opacity 0.15s;
+    }
+    .contact-card a.btn:hover { opacity: 0.85; }
+    footer {
+      margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 8px;
+    }
+    footer p { color: var(--faint); font-size: 12px; margin: 0; }
+    footer a { color: rgba(96,165,250,0.55); font-size: 12px; text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+    #progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--accent); width: 0%;
+      transition: width 0.1s linear; z-index: 100; border-radius: 0 2px 2px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="progress"></div>
+  <div class="wrapper">
+
+    <header>
+      <div class="badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Conforme RGPD (UE) 2016/679
+      </div>
+      <h1>Politique de confidentialité<br><span class="app-name">Oralo app</span></h1>
+      <p class="meta">Dernière mise à jour : <strong>30/04/2026</strong> &nbsp;·&nbsp; Version 1.0</p>
+    </header>
+
+    <nav class="toc" aria-label="Sommaire">
+      <p class="toc-title">Sommaire</p>
+      <ol>
+        <li><a href="#s1">Responsable du traitement</a></li>
+        <li><a href="#s2">Données collectées</a></li>
+        <li><a href="#s3">Finalités &amp; bases légales</a></li>
+        <li><a href="#s4">Destinataires</a></li>
+        <li><a href="#s5">Transferts hors UE</a></li>
+        <li><a href="#s6">Durée de conservation</a></li>
+        <li><a href="#s7">Sécurité</a></li>
+        <li><a href="#s8">Vos droits RGPD</a></li>
+        <li><a href="#s9">Suppression du compte</a></li>
+        <li><a href="#s10">Cookies &amp; traceurs</a></li>
+        <li><a href="#s11">Mineurs</a></li>
+        <li><a href="#s12">Mises à jour</a></li>
+      </ol>
+    </nav>
+
+    <div class="info-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <p>La présente politique décrit comment <strong>Louis MONTROBERT</strong> traite vos données personnelles dans le cadre de l'utilisation de l'app mobile <strong>Oralo app</strong>, disponible sur Google Play. Elle couvre toutes les fonctionnalités : mini-cours financiers, tableau de bord patrimonial, analyses par IA (patrimoine, fiscalité, actions/ETF/crypto) et résumés de news.</p>
+    </div>
+
+    <section class="section" id="s1">
+      <h2><span class="num">1</span>Responsable du traitement</h2>
+      <div class="legal-box">
+        <p><strong>Louis MONTROBERT</strong><br>
+        Développeur indépendant de l’application Oralo app<br>
+        Localisation : Paris, France<br>
+        E-mail : <strong>oralo.business@gmaiL.com</strong></p>
+      </div>
+      <p>Pour toute question relative à cette politique ou au traitement de vos données, contactez-nous à l'adresse ci-dessus.</p>
+    </section>
+
+    <section class="section" id="s2">
+      <h2><span class="num">2</span>Données personnelles collectées</h2>
+      <p>Nous collectons uniquement les données strictement nécessaires au fonctionnement de l'Application, dans le respect du principe de minimisation prévu par le RGPD.</p>
+      <h3>2.1 · Identification</h3>
+      <ul>
+        <li>Adresse e-mail</li>
+        <li>Prénom ou pseudonyme</li>
+        <li>Langue de l'interface</li>
+        <li>Pays de résidence fiscale</li>
+      </ul>
+      <h3>2.2 · Données financières et patrimoniales</h3>
+      <p>Ces données sont saisies par vous pour construire votre tableau de bord et personnaliser les analyses :</p>
+      <ul>
+        <li>Types de comptes / enveloppes (PEA, CTO, assurance-vie, PER, crypto wallet, épargne…)</li>
+        <li>Montants investis, valorisations approximatives, répartition du patrimoine</li>
+        <li>Horizon d'investissement, tolérance au risque, situation familiale, niveau de revenu (si renseigné)</li>
+      </ul>
+      <h3>2.3 · Analyses générées par IA</h3>
+      <ul>
+        <li>Résultats d'analyses patrimoniales et fiscales (scoring, observations pédagogiques)</li>
+        <li>Analyses et synthèses sur des instruments financiers (actions, ETF, crypto) à partir de données de marché publiques</li>
+        <li>Résumés de news financiers générés par IA</li>
+      </ul>
+      <h3>2.4 · Données d'usage</h3>
+      <ul>
+        <li>Progression dans les mini-cours, leçons, quêtes et quiz</li>
+        <li>Points/XP, succès débloqués, paramètres et préférences</li>
+        <li>Logs techniques : type d'appareil, version de l'app, dates/heures de connexion, erreurs</li>
+      </ul>
+      <h3>2.5 · Achats et monétisation</h3>
+      <ul>
+        <li>Type de produit acheté (coins, abonnement premium), date, montant, identifiant de transaction Google Play / App Store</li>
+        <li>Statut d'abonnement (actif, expiré, annulé)</li>
+      </ul>
+      <p>Les données de paiement (carte bancaire…) sont gérées par Google Play / Apple et ne nous sont pas transmises.</p>
+      <h3>2.6 · Parrainage et points</h3>
+      <ul>
+        <li>Code de parrainage lié à votre compte</li>
+        <li>Informations parrain/filleul (identifiant interne, date d'inscription, points attribués)</li>
+      </ul>
+      <h3>2.7 · SDK tiers / analytics / publicité</h3>
+      <p>L'Application peut utiliser des SDK tiers (analytics, crash reporting, monétisation) susceptibles de collecter l'identifiant publicitaire, des infos techniques (OS, modèle, version) et des événements d'usage. Consultez les politiques de ces tiers pour le détail.</p>
+    </section>
+
+    <section class="section" id="s3">
+      <h2><span class="num">3</span>Finalités et bases légales</h2>
+      <div class="legal-box">
+        <p><strong>Fourniture et gestion de l'Application</strong> — création de compte, sauvegarde des données patrimoniales, tableau de bord, analyses IA, progression dans les cours.<br>
+        <span class="base-tag">Exécution du contrat (CGU)</span></p>
+      </div>
+      <div class="legal-box">
+        <p><strong>Modèle freemium, achats et parrainage</strong> — gestion des achats intégrés, abonnements, attribution de points/XP, programme de parrainage.<br>
+        <span class="base-tag">Exécution du contrat · Intérêt légitime</span></p>
+      </div>
+      <div class="legal-box">
+        <p><strong>Amélioration de l'Application</strong> — statistiques anonymisées/pseudonymisées, correction de bugs, amélioration des contenus pédagogiques.<br>
+        <span class="base-tag">Intérêt légitime</span></p>
+      </div>
+      <div class="legal-box">
+        <p><strong>Notifications et communications</strong> — notifications push (quêtes, streaks, rappels), e-mails importants.<br>
+        <span class="base-tag">Consentement · Exécution du contrat</span></p>
+      </div>
+      <div class="legal-box">
+        <p><strong>Obligations légales</strong> — comptabilité, facturation, lutte contre la fraude, réponses aux autorités.<br>
+        <span class="base-tag">Obligation légale</span></p>
+      </div>
+      <p>Nous ne procédons pas à un <strong>profilage automatisé produisant des effets juridiques</strong>. Les scores et analyses générés ont une finalité pédagogique uniquement.</p>
+    </section>
+
+    <section class="section" id="s4">
+      <h2><span class="num">4</span>Destinataires de vos données</h2>
+      <ul>
+        <li><strong>Équipe interne</strong> de [Nom de la société] (développement, exploitation, support, conformité).</li>
+        <li><strong>Prestataires techniques</strong> : hébergeur, base de données, sauvegarde, e-mailing, crash reporting, analytics.</li>
+        <li><strong>Fournisseurs d'IA</strong> pour la génération des analyses (données minimisées, encadrées par contrats de traitement).</li>
+        <li><strong>Plateformes de distribution</strong> (Google Play, App Store) pour la gestion des paiements.</li>
+        <li><strong>Autorités administratives ou judiciaires</strong>, lorsque la loi l'exige.</li>
+      </ul>
+      <p>Nous <strong>ne vendons pas</strong> vos données personnelles à des tiers.</p>
+    </section>
+
+    <section class="section" id="s5">
+      <h2><span class="num">5</span>Transferts hors Union européenne</h2>
+      <p>Certains prestataires peuvent être situés hors UE. Dans ce cas, nous encadrons ces transferts par des <strong>garanties appropriées</strong> (clauses contractuelles types de la Commission européenne, localisation des données en UE lorsque possible).</p>
+    </section>
+
+    <section class="section" id="s6">
+      <h2><span class="num">6</span>Durée de conservation</h2>
+      <ul>
+        <li><strong>Données de compte</strong> : durée de vie du compte + [X ans] après la dernière activité ou la suppression.</li>
+        <li><strong>Données financières et patrimoniales</strong> : durée d'utilisation active, puis au maximum [X ans] avant anonymisation.</li>
+        <li><strong>Logs techniques</strong> : 6 à 24 mois selon les besoins de sécurité.</li>
+        <li><strong>Données de facturation</strong> : 10 ans (obligation légale comptable française).</li>
+      </ul>
+      <p>Au-delà, les données sont supprimées ou anonymisées de manière irréversible.</p>
+    </section>
+
+    <section class="section" id="s7">
+      <h2><span class="num">7</span>Sécurité des données</h2>
+      <ul>
+        <li>Chiffrement des communications (HTTPS / TLS)</li>
+        <li>Gestion des accès et authentification des administrateurs</li>
+        <li>Journalisation des accès sensibles</li>
+        <li>Sauvegardes régulières et mesures de résilience</li>
+      </ul>
+      <p>En cas d'incident affectant vos données, nous prendrons les mesures nécessaires et, le cas échéant, vous notifierons ainsi que l'autorité compétente conformément au RGPD.</p>
+    </section>
+
+    <section class="section" id="s8">
+      <h2><span class="num">8</span>Vos droits (RGPD)</h2>
+      <div class="rights-grid">
+        <div class="right-card"><p class="right-title">Droit d'accès</p><p>Obtenir confirmation et copie des données vous concernant.</p></div>
+        <div class="right-card"><p class="right-title">Droit de rectification</p><p>Corriger ou compléter des données inexactes.</p></div>
+        <div class="right-card"><p class="right-title">Droit à l'effacement</p><p>Demander la suppression de vos données (« droit à l'oubli »).</p></div>
+        <div class="right-card"><p class="right-title">Droit à la limitation</p><p>Suspendre temporairement le traitement dans certains cas.</p></div>
+        <div class="right-card"><p class="right-title">Droit d'opposition</p><p>Vous opposer aux traitements fondés sur l'intérêt légitime.</p></div>
+        <div class="right-card"><p class="right-title">Droit à la portabilité</p><p>Recevoir vos données dans un format structuré et lisible.</p></div>
+        <div class="right-card"><p class="right-title">Directives post-mortem</p><p>Définir le sort de vos données après votre décès (France).</p></div>
+        <div class="right-card"><p class="right-title">Réclamation CNIL</p><p>Saisir la CNIL à tout moment sur <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>.</p></div>
+      </div>
+      <p>Pour exercer vos droits : directement via <strong>Paramètres &gt; Compte</strong> dans l'Application, ou en nous écrivant à <strong>[adresse e-mail DPO]</strong>.</p>
+    </section>
+
+    <section class="section" id="s9">
+      <h2><span class="num">9</span>Suppression du compte et des données</h2>
+      <p>Vous pouvez supprimer votre compte depuis <strong>Paramètres &gt; Compte &gt; Supprimer le compte</strong>. Cette action entraîne la suppression de vos données de nos systèmes de production, sous réserve :</p>
+      <ul>
+        <li>d'une conservation temporaire dans les sauvegardes (durée limitée),</li>
+        <li>de la conservation des données nécessaires à nos obligations légales (facturation, comptabilité, litiges).</li>
+      </ul>
+      <p>Vous pouvez également nous écrire à <strong>[adresse e-mail DPO]</strong> pour toute demande de suppression.</p>
+    </section>
+
+    <section class="section" id="s10">
+      <h2><span class="num">10</span>Cookies, traceurs et SDK</h2>
+      <p>L'Application peut utiliser des SDK et identifiants techniques pour mesurer l'audience, assurer la stabilité et éventuellement afficher des publicités. Lorsque la réglementation l'exige, votre consentement est recueilli avant activation des traceurs non essentiels. Vous pouvez gérer vos préférences via les <strong>paramètres Android</strong> (Confidentialité &gt; Publicité) et/ou les paramètres de l'Application.</p>
+    </section>
+
+    <section class="section" id="s11">
+      <h2><span class="num">11</span>Mineurs</h2>
+      <p>L'Application est destinée aux <strong>personnes majeures</strong>. Nous ne collectons pas sciemment de données de mineurs sans accord parental. Contactez-nous si vous pensez que des données d'un mineur ont été collectées par erreur.</p>
+    </section>
+
+    <section class="section" id="s12">
+      <h2><span class="num">12</span>Mises à jour de cette politique</h2>
+      <p>Nous pouvons modifier cette politique pour refléter l'évolution de l'Application ou de la réglementation. En cas de modification substantielle, vous en serez informé via l'Application ou par e-mail. La version à jour est toujours disponible à l'adresse :</p>
+      <p><strong>[https://votre-compte.github.io/nom-app-privacy]</strong></p>
+    </section>
+
+    <div class="contact-card">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" style="flex-shrink:0"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Une question sur vos données ?
+      </h2>
+      <p>Notre équipe est disponible pour toute demande relative à cette politique ou à vos droits RGPD.</p>
+      <a class="btn" href="mailto:[adresse-email-contact]">Nous contacter</a>
+    </div>
+
+    <footer>
+      <p>© [Année] [Nom de la société] — Tous droits réservés</p>
+      <a href="#top">Haut de page ↑</a>
+    </footer>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      var doc = document.documentElement;
+      var scroll = doc.scrollTop || document.body.scrollTop;
+      var height = doc.scrollHeight - doc.clientHeight;
+      document.getElementById('progress').style.width = (scroll / height * 100) + '%';
+    });
+  </script>
+</body>
+</html>
